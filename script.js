@@ -22,32 +22,43 @@ function generatePassword() {
 
     var userPwLength = (setPwLength());
 
-    lowerCaseChoice = window.prompt("Would you like to include lower case characters? (yes/no):");
-    if (lowerCaseChoice == "yes") {
-        selectedArray = selectedArray.concat(lowerCaseSet);
-    }
 
-    upperCaseChoice = window.prompt("Would you like to include upper case characters? (yes/no):");
-    if (upperCaseChoice == "yes") {
-        selectedArray = selectedArray.concat(upperCaseSet);
-    }
+    promptChoices = 0
+    while (promptChoices == 0) {
+        lowerCaseChoice = window.prompt("Would you like to include lower case characters? (yes/no):");
+        if (lowerCaseChoice == "yes") {
+            selectedArray = selectedArray.concat(lowerCaseSet);
+            promptChoices += 1;
+        }
 
-    numericChoice = window.prompt("Would you like to include numeric characters? (yes/no):");
-    if (numericChoice == "yes") {
-        selectedArray = selectedArray.concat(numSet);
-    }
+        upperCaseChoice = window.prompt("Would you like to include upper case characters? (yes/no):");
+        if (upperCaseChoice == "yes") {
+            selectedArray = selectedArray.concat(upperCaseSet);
+            promptChoices += 1;
+        }
 
-    specialCharacterChoice = window.prompt("Would you like to include special characters? (yes/no):");
-    if (specialCharacterChoice == "yes") {
-        selectedArray = selectedArray.concat(specialSet);
+        numericChoice = window.prompt("Would you like to include numeric characters? (yes/no):");
+        if (numericChoice == "yes") {
+            selectedArray = selectedArray.concat(numSet);
+            promptChoices += 1;
+        }
+
+        specialCharacterChoice = window.prompt("Would you like to include special characters? (yes/no):");
+        if (specialCharacterChoice == "yes") {
+            selectedArray = selectedArray.concat(specialSet);
+            promptChoices += 1;
+        }
+
+        if (promptChoices == 0) {
+            mustChoose = window.alert("You must choose atleast one type of character in your password.");
+        }
     }
-    
     for (var i = 0; i < userPwLength; i++) {
         userPw += selectedArray[Math.floor(Math.random() * selectedArray.length)];
     }
-    return userPw;
+return userPw;
 }
-
+    
 
 function setPwLength() {
     var PwLength = 0;
