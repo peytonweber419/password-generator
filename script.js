@@ -5,8 +5,9 @@ var upperCaseChoice = "";
 var numericChoice = "";
 var specialCharacterChoice = "";
 var userPw = "";
-
+// defines the generatePassword function
 function generatePassword() {
+    //lists all character types available in the password generator
     var lowerCaseSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
      "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -19,10 +20,10 @@ function generatePassword() {
      "-", ":", ";", "[", "]", "{", "}", ".", "<", ">", "=", "_", "`", "|", "~"];
 
     var selectedArray = []; 
-
+    //defines userPwLength as the return of setPwLength
     var userPwLength = (setPwLength());
 
-
+    //While loop to make sure the user selects at least one type of character while moving through the prompts
     promptChoices = 0
     while (promptChoices == 0) {
         lowerCaseChoice = window.prompt("Would you like to include lower case characters? (yes/no):");
@@ -48,18 +49,19 @@ function generatePassword() {
             selectedArray = selectedArray.concat(specialSet);
             promptChoices += 1;
         }
-
+        //Creates an alert telling the user they have to choose atleast one character type if they did not choose any
         if (promptChoices == 0) {
-            mustChoose = window.alert("You must choose atleast one type of character in your password.");
+            mustChoose = window.alert("You must choose atleast one type of character in your password by typing yes or no in the appropriate prompts.");
         }
     }
+    //Adds randomly selected characters to the password with the criteria given to it by the user
     for (var i = 0; i < userPwLength; i++) {
         userPw += selectedArray[Math.floor(Math.random() * selectedArray.length)];
     }
 return userPw;
 }
     
-
+//Defines the criteria of the password length with a min and max in a prompt
 function setPwLength() {
     var PwLength = 0;
     while ((PwLength < 8) || (PwLength > 128)) {
