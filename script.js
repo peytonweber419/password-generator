@@ -1,5 +1,11 @@
 // Assignment Code
 
+var lowerCaseChoice = "";
+var upperCaseChoice = "";
+var numericChoice = "";
+var specialCharacterChoice = "";
+var userPw = "";
+
 function generatePassword() {
     var lowerCaseSet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
      "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -14,11 +20,7 @@ function generatePassword() {
 
     var selectedArray = []; 
 
-    var passwordLength = (setPwLength());
-    var lowerCaseChoice = "";
-    var upperCaseChoice = "";
-    var numericChoice = "";
-    var specialCharacterChoice = "";
+    var userPwLength = (setPwLength());
 
     lowerCaseChoice = window.prompt("Would you like to include lower case characters? (yes/no):");
     if (lowerCaseChoice == "yes") {
@@ -39,7 +41,13 @@ function generatePassword() {
     if (specialCharacterChoice == "yes") {
         selectedArray = selectedArray.concat(specialSet);
     }
+    
+    for (var i = 0; i < userPwLength; i++) {
+        userPw += selectedArray[Math.floor(Math.random() * selectedArray.length)];
+    }
+    return userPw;
 }
+
 
 function setPwLength() {
     var PwLength = 0;
@@ -48,6 +56,8 @@ function setPwLength() {
     }
     return PwLength;
 }
+
+
 
 var generateBtn = document.querySelector("#generate");
 
