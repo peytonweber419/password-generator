@@ -1,2 +1,4 @@
-# password-generator
-creating a random password generator
+# Password Generator
+## Description
+
+
