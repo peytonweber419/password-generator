@@ -1,33 +1,28 @@
 # Password Generator
+
 ## Description
+
 ### Using JavaScript I have created a functional random password generator. This can be helpful if you struggle to come up with your own secure passwords.
 
-## User Story
+## Installation
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+N/A
 
-## Acceptance Criteria
+## Usage
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+Click the red "Generate Password" button, move through the prompts that appear on the page, and the final result is a password that has been generated with the criteria that the user provides in the prompts.
+
+## Credits
+
+N/A
+
+## License
+
+N/A
+
+## Link to Deployed Application
 
 
+## Screenshot
+
+![image](https://github.com/peytonweber419/password-generator/assets/144742645/960bbb50-5904-4306-85eb-f2645153d2bc)
